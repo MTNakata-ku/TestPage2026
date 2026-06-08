@@ -16,10 +16,23 @@
     <p>GitHub Pages の動作確認用ページです。</p>
 
     <article>
-      <h2>テスト項目</h2>
-      <p>このページでは、HTMLとCSSの表示確認を行います。</p>
-      <button>テストボタン</button>
+      <h2>あいさつテスト</h2>
+      <p id="message">ボタンを押してください。</p>
+      <button id="greetingButton">テストボタン</button>
     </article>
   </main>
+
+  <script>
+    const messages = ["おはよう", "こんにちは", "さようなら"];
+    let index = 0;
+
+    const messageElement = document.getElementById("message");
+    const button = document.getElementById("greetingButton");
+
+    button.addEventListener("click", () => {
+      messageElement.textContent = messages[index];
+      index = (index + 1) % messages.length;
+    });
+  </script>
 </body>
 </html>
